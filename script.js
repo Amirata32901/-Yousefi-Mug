@@ -6,7 +6,7 @@ const buttons = document.querySelectorAll('.card button');
 
 // ساخت نمایشگر سبد خرید
 const cart = document.createElement('div');
-cart.innerHTML = '🛒 سبد خرید: <span id="cart-count">0</span>';
+cart.innerHTML = '🛒 سبد خرید: 0';
 cart.style.position = 'fixed';
 cart.style.top = '90px';
 cart.style.left = '20px';
@@ -24,48 +24,71 @@ document.body.appendChild(cart);
 buttons.forEach(button => {
   button.addEventListener('click', () => {
     cartCount++;
-    document.getElementById('cart-count').textContent = cartCount;
+
+    // اگر شمارنده وجود داشت
+    const counter = document.getElementById('cart-count');
+    if (counter) {
+      counter.textContent = cartCount;
+    }
+
+    // باز شدن مودال خرید
+    openModal();
 
     // انیمیشن کوچک
     cart.style.transform = 'scale(1.1)';
     setTimeout(() => {
       cart.style.transform = 'scale(1)';
     }, 150);
-
-    alert('محصول به سبد خرید اضافه شد 🛒');
   });
 });
+
+
 // ================= جستجو =================
 
 const search = document.getElementById('search');
 const noResult = document.getElementById('no-result');
 
-search.addEventListener('input', function () {
+if (search) {
+  search.addEventListener('input', function () {
 
-  const value = this.value.toLowerCase().trim();
-  let found = 0;
+    const value = this.value.toLowerCase().trim();
+    let found = 0;
 
-  document.querySelectorAll('.card').forEach(card => {
+    document.querySelectorAll('.card').forEach(card => {
 
-    const title = card.querySelector('h3').innerText.toLowerCase();
+      const title = card.querySelector('h3').innerText.toLowerCase();
 
-    if (title.includes(value)) {
+      if (title.includes(value)) {
 
-      card.style.display = 'block';
-      found++;
+        card.style.display = 'block';
+        found++;
 
-    } else {
+      } else {
 
-      card.style.display = 'none';
+        card.style.display = 'none';
 
+      }
+
+    });
+
+    if (noResult) {
+      if (found === 0 && value !== '') {
+        noResult.style.display = 'block';
+      } else {
+        noResult.style.display = 'none';
+      }
     }
 
   });
+}
 
-  if (found === 0 && value !== '') {
-    noResult.style.display = 'block';
-  } else {
-    noResult.style.display = 'none';
-  }
 
-});
+// ================= مودال خرید =================
+
+function openModal() {
+  document.getElementById('buyModal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('buyModal').style.display = 'none';
+}
