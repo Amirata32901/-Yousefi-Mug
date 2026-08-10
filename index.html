@@ -1,360 +1,309 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>فروشگاه یوسفی</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فروشگاه یوسفی</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Vazirmatn',sans-serif;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    body{
-      background:#fffdf5;
-      color:#333;
-    }
+body{
+  font-family:Tahoma;
+  background:#0b0b0b;
+  color:#fff;
+  line-height:1.8;
+}
 
-    header{
-      background:#ffd600;
-      padding:15px 30px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:15px;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      box-shadow:0 4px 15px rgba(0,0,0,.1);
-    }
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
 
-    .logo{
-      font-size:32px;
-      font-weight:900;
-      color:#e53935;
-    }
+/* هدر */
 
-    nav{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(10,10,10,.95);
+  border-bottom:1px solid #2a2a2a;
+}
 
-    nav a{
-      text-decoration:none;
-      color:#333;
-      font-weight:700;
-      background:white;
-      padding:10px 18px;
-      border-radius:14px;
-      transition:.3s;
-    }
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+  flex-wrap:wrap;
+  gap:20px;
+}
 
-    nav a:hover{
-      background:#e53935;
-      color:white;
-    }
+.logo{
+  font-size:30px;
+  font-weight:bold;
+  color:#f5c542;
+}
 
-    #search{
-      padding:12px 16px;
-      border:none;
-      border-radius:14px;
-      width:220px;
-      font-size:14px;
-    }
+.search-box input{
+  background:#161616;
+  border:1px solid #333;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:14px;
+  min-width:220px;
+}
 
-    .hero{
-      padding:80px 20px;
-      background:linear-gradient(135deg,#fff8cc,#ffffff);
-    }
+/* بنر */
 
-    .hero-box{
-      max-width:1200px;
-      margin:auto;
-      background:white;
-      border:3px solid #ffd600;
-      border-radius:35px;
-      box-shadow:0 12px 35px rgba(0,0,0,.12);
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
-      align-items:center;
-      padding:40px;
-    }
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  padding:70px 0;
+  flex-wrap:wrap;
+}
 
-    .hero-text h1{
-      font-size:48px;
-      color:#e53935;
-      line-height:1.6;
-      margin-bottom:20px;
-    }
+.hero-text{
+  flex:1;
+  min-width:280px;
+}
 
-    .hero-text p{
-      font-size:20px;
-      line-height:2;
-      color:#555;
-      margin-bottom:35px;
-    }
+.hero-text h1{
+  font-size:48px;
+  color:#f5c542;
+  margin-bottom:20px;
+}
 
-    .hero-btn{
-      background:#e53935;
-      color:white;
-      border:none;
-      padding:16px 34px;
-      border-radius:18px;
-      font-size:18px;
-      font-weight:700;
-      cursor:pointer;
-      transition:.3s;
-      box-shadow:0 6px 18px rgba(229,57,53,.35);
-    }
+.hero-text p{
+  font-size:20px;
+  color:#ddd;
+  margin-bottom:30px;
+}
 
-    .hero-btn:hover{
-      background:#c62828;
-      transform:translateY(-3px);
-    }
+.hero-btn{
+  background:linear-gradient(45deg,#f5c542,#d4a017);
+  color:#000;
+  border:none;
+  padding:16px 32px;
+  border-radius:40px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .hero-image img{
-      width:100%;
-      border-radius:25px;
-    }
+.hero-image{
+  flex:1;
+  min-width:280px;
+}
 
-    .section-title{
-      text-align:center;
-      font-size:34px;
-      color:#222;
-      margin:60px 0 30px;
-      font-weight:900;
-    }
+.hero-image img{
+  width:100%;
+  border-radius:30px;
+}
 
-    .products{
-      padding:0 20px 60px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:25px;
-    }
+/* محصولات */
 
-    .card{
-      background:white;
-      border-radius:25px;
-      overflow:hidden;
-      border:2px solid #fff3b0;
-      box-shadow:0 8px 25px rgba(0,0,0,.08);
-      transition:.3s;
-    }
+.section-title{
+  text-align:center;
+  color:#f5c542;
+  font-size:36px;
+  margin-bottom:30px;
+}
 
-    .card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 15px 35px rgba(0,0,0,.15);
-    }
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+}
 
-    .card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-    }
+.card{
+  background:#151515;
+  border:1px solid #2a2a2a;
+  border-radius:24px;
+  overflow:hidden;
+}
 
-    .card h3{
-      font-size:20px;
-      padding:18px 18px 8px;
-    }
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
 
-    .price{
-      color:#e53935;
-      font-size:22px;
-      font-weight:900;
-      padding:0 18px 18px;
-    }
+.card-content{
+  padding:18px;
+}
 
-    .card button{
-      margin:0 18px 18px;
-      width:calc(100% - 36px);
-      background:#e53935;
-      color:white;
-      border:none;
-      padding:14px;
-      border-radius:16px;
-      font-size:16px;
-      font-weight:700;
-      cursor:pointer;
-    }
+.card h3{
+  margin-bottom:10px;
+}
 
-    .modal{
-      display:none;
-      position:fixed;
-      z-index:9999;
-      left:0;
-      top:0;
-      width:100%;
-      height:100%;
-      background:rgba(0,0,0,.5);
-      justify-content:center;
-      align-items:center;
-    }
+.price{
+  color:#f5c542;
+  font-weight:bold;
+  margin-bottom:16px;
+}
 
-    .modal-content{
-      background:white;
-      width:90%;
-      max-width:380px;
-      border-radius:30px;
-      padding:35px 25px;
-      text-align:center;
-      position:relative;
-      border:3px solid #ffd600;
-      box-shadow:0 15px 40px rgba(0,0,0,.25);
-    }
+.buy-btn{
+  width:100%;
+  background:#f5c542;
+  color:#000;
+  border:none;
+  padding:12px;
+  border-radius:14px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .close{
-      position:absolute;
-      top:12px;
-      left:18px;
-      font-size:28px;
-      cursor:pointer;
-      color:#888;
-    }
+/* مودال */
 
-    .modal-icon{
-      font-size:55px;
-      margin-bottom:15px;
-    }
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
 
-    .modal-content h2{
-      color:#e53935;
-      margin-bottom:15px;
-      font-size:28px;
-    }
+.modal-content{
+  background:#111;
+  border:1px solid #333;
+  border-radius:24px;
+  padding:28px;
+  width:90%;
+  max-width:360px;
+  text-align:center;
+}
 
-    .modal-content p{
-      color:#555;
-      line-height:2;
-      margin-bottom:20px;
-    }
+.close{
+  float:left;
+  font-size:28px;
+  cursor:pointer;
+}
 
-    .rubika-id{
-      background:#fff3b0;
-      color:#222;
-      font-size:22px;
-      font-weight:900;
-      padding:16px;
-      border-radius:18px;
-      margin-bottom:20px;
-      border:2px dashed #e53935;
-    }
+.rubika-id{
+  background:#1d1d1d;
+  border:1px solid #333;
+  border-radius:16px;
+  padding:14px;
+  margin:20px 0;
+  color:#f5c542;
+  font-weight:bold;
+}
 
-    .copy-btn{
-      width:100%;
-      background:#e53935;
-      color:white;
-      border:none;
-      padding:14px;
-      border-radius:16px;
-      font-size:17px;
-      font-weight:700;
-      cursor:pointer;
-    }
+.copy-btn{
+  width:100%;
+  background:#f5c542;
+  color:#000;
+  border:none;
+  padding:14px;
+  border-radius:14px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .contact{
-      background:#fff3b0;
-      padding:50px 20px;
-      text-align:center;
-    }
+/* فوتر */
 
-    .contact h2{
-      color:#e53935;
-      font-size:34px;
-      margin-bottom:20px;
-    }
+footer{
+  margin-top:60px;
+  background:#111;
+  border-top:1px solid #2a2a2a;
+  padding:40px 0;
+  text-align:center;
+  color:#ccc;
+}
 
-    .contact p{
-      margin:12px 0;
-      font-size:18px;
-      font-weight:500;
-    }
+/* موبایل */
 
-    footer{
-      background:#e53935;
-      color:white;
-      text-align:center;
-      padding:22px;
-      font-size:15px;
-      font-weight:700;
-    }
+@media(max-width:768px){
 
-    @media(max-width:850px){
-      .hero-box{
-        grid-template-columns:1fr;
-        text-align:center;
-      }
+  .hero-text h1{
+    font-size:36px;
+  }
 
-      .hero-text h1{
-        font-size:38px;
-      }
-    }
-  </style>
+  .hero-text p{
+    font-size:18px;
+  }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
+  <div class="container navbar">
+    <div class="logo">فروشگاه یوسفی</div>
 
-  <div class="logo">فروشگاه یوسفی</div>
-
-  <nav>
-    <a href="#">خانه</a>
-    <a href="#products">محصولات</a>
-    <a href="profile.html">پروفایل</a>
-    <a href="admin.html">مدیریت</a>
-    <a href="#contact">تماس با ما</a>
-  </nav>
-
-  <input type="text" id="search" placeholder="جستجوی محصول...">
-
+    <div class="search-box">
+      <input type="text" id="search" placeholder="جستجوی محصول...">
+    </div>
+  </div>
 </header>
 
-<section class="hero">
+<section class="container hero">
 
-  <div class="hero-box">
+  <div class="hero-text">
 
-    <div class="hero-text">
+    <h1>به فروشگاه یوسفی خوش آمدید</h1>
 
-      <h1>به فروشگاه یوسفی خوش آمدید</h1>
+    <p>
+      فروش انواع ماگ، فلاسک، پلاسکو و لوازم خانه
+      با بهترین کیفیت و مناسب‌ترین قیمت
+    </p>
 
-      <p>
-        فروش انواع ماگ، فلاسک، پلاسکو و لوازم خانه
-        با بهترین کیفیت و مناسب‌ترین قیمت
-      </p>
-
-      <button class="hero-btn"
+    <button class="hero-btn"
       onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-        مشاهده محصولات
-      </button>
+      مشاهده محصولات
+    </button>
 
+  </div>
+
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?q=80&w=1200&auto=format&fit=crop" alt="محصولات">
+  </div>
+
+</section>
+
+<section class="container" id="products">
+
+  <h2 class="section-title">محصولات فروشگاه</h2>
+
+  <div class="products">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?q=80&w=600&auto=format&fit=crop">
+      <div class="card-content">
+        <h3>ماگ سرامیکی</h3>
+        <p class="price">280,000 تومان</p>
+        <button class="buy-btn" onclick="openModal()">خرید</button>
+      </div>
     </div>
 
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?q=80&w=1200&auto=format&fit=crop" alt="محصولات">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?q=80&w=600&auto=format&fit=crop">
+      <div class="card-content">
+        <h3>فلاسک استیل</h3>
+        <p class="price">590,000 تومان</p>
+        <button class="buy-btn" onclick="openModal()">خرید</button>
+      </div>
     </div>
 
   </div>
 
 </section>
 
-<h2 class="section-title">محصولات ویژه</h2>
-
-<section class="products" id="products">
-<div class="card">
-  <img src="mug.jpg" alt="ماگ">
-  <h3>ماگ باب اسفنجی</h3>
-  <p class="price">280,000 تومان</p>
-  <button>خرید</button>
-</div>
-</section>
+<!-- مودال خرید -->
 
 <div id="buyModal" class="modal">
 
@@ -362,77 +311,29 @@
 
     <span class="close" onclick="closeModal()">&times;</span>
 
-    <div class="modal-icon">🛒</div>
+    <h2 style="color:#f5c542">خرید محصول</h2>
 
-    <h2>خرید محصول</h2>
+    <p>برای خرید این محصول به آیدی زیر در روبیکا پیام دهید</p>
 
-    <p>
-      برای خرید این محصول به آیدی زیر در روبیکا پیام دهید
-    </p>
+    <div class="rubika-id">@YousefiShop</div>
 
-    <div class="rubika-id">
-      @YousefiShop
-    </div>
-
-    <button class="copy-btn" onclick="copyID()">
-      کپی آیدی
+    <button class="copy-btn" id="copyBtn" onclick="copyID()">
+      📋 کپی آیدی
     </button>
 
   </div>
 
 </div>
 
-<section class="contact" id="contact">
-
-  <h2>تماس با ما</h2>
-
-  <p>📞 09394634895</p>
-  <p>📍 اردبیل، خیابان فلسطین</p>
-  <p>🕒 همه روزه از ۹ صبح تا ۱۰ شب</p>
-
-</section>
-<div id="no-result" style="display:none;text-align:center;padding:30px;">
-  <h2 style="color:#e53935;">🔍 محصولی پیدا نشد 😔</h2>
-</div>
 <footer>
-  © 2026 فروشگاه یوسفی - همه حقوق محفوظ است
+  <p>📍 اردبیل، خیابان فلسطین</p>
+  <p>📞 09394634895</p>
+  <p>© فروشگاه یوسفی</p>
 </footer>
 
 <script>
 
-const search = document.getElementById('search');
-
-search.addEventListener('input',function(){
-
-  const value = this.value.toLowerCase();
-
-  document.querySelectorAll('.card').forEach(card=>{
-
-    const title =
-      card.querySelector('h3').innerText.toLowerCase();
-
-    card.style.display =
-      title.includes(value) ? 'block' : 'none';
-  });
-});
-
-const saved =
-  JSON.parse(localStorage.getItem('products') || '[]');
-
-const productsBox =
-  document.getElementById('products');
-
-saved.forEach(p=>{
-
-  productsBox.innerHTML += `
-    <div class="card">
-      <img src="${p.image}">
-      <h3>${p.title}</h3>
-      <p class="price">${p.price} تومان</p>
-      <button onclick="openModal()">خرید</button>
-    </div>
-  `;
-});
+/* مودال */
 
 function openModal(){
   document.getElementById('buyModal').style.display='flex';
@@ -442,17 +343,71 @@ function closeModal(){
   document.getElementById('buyModal').style.display='none';
 }
 
-function copyID(){
-  navigator.clipboard.writeText('@YousefiShop');
-  alert('آیدی روبیکا کپی شد ✅');
-}
+/* بستن با کلیک بیرون */
 
-window.onclick = function(e){
-  const modal = document.getElementById('buyModal');
-  if(e.target === modal){
+window.addEventListener('click',function(e){
+  const modal=document.getElementById('buyModal');
+  if(e.target===modal){
     closeModal();
   }
+});
+
+/* کپی آیدی روی همه گوشی‌ها و کامپیوترها */
+
+function copyID(){
+
+  const text='@YousefiShop';
+
+  if(navigator.clipboard && window.isSecureContext){
+
+    navigator.clipboard.writeText(text).then(()=>{
+      copied();
+    });
+
+  }else{
+
+    const area=document.createElement('textarea');
+    area.value=text;
+    document.body.appendChild(area);
+    area.select();
+    document.execCommand('copy');
+    document.body.removeChild(area);
+
+    copied();
+  }
 }
+
+function copied(){
+
+  const btn=document.getElementById('copyBtn');
+
+  btn.innerHTML='✅ کپی شد';
+
+  btn.style.background='#2ecc71';
+  btn.style.color='#fff';
+
+  setTimeout(()=>{
+    btn.innerHTML='📋 کپی آیدی';
+    btn.style.background='#f5c542';
+    btn.style.color='#000';
+  },2000);
+}
+
+/* جستجو */
+
+document.getElementById('search').addEventListener('input',function(){
+
+  const value=this.value.toLowerCase();
+
+  document.querySelectorAll('.card').forEach(card=>{
+
+    const title=card.querySelector('h3').innerText.toLowerCase();
+
+    card.style.display=title.includes(value)?'block':'none';
+
+  });
+
+});
 
 </script>
 
