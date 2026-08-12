@@ -545,10 +545,6 @@ search.addEventListener('input', function () {
     (found === 0 && value !== '') ? 'block' : 'none';
 });
 
-// # راهنما: خواندن محصولات ذخیره‌شده از پنل مدیریت
-const saved = JSON.parse(localStorage.getItem('products') || '[]');
-const productsBox = document.getElementById('products');
-
 // # راهنما: نمایش محصولات داخل سایت
 saved.forEach(p => {
   productsBox.innerHTML += `
@@ -563,19 +559,6 @@ saved.forEach(p => {
     </div>
   `;
 });
-
-// # راهنما: افزودن محصول از پنل مدیریت
-function addProduct() {
-
-  const title = document.getElementById('productName').value.trim();
-  const price = document.getElementById('productPrice').value.trim();
-  const image = document.getElementById('productImage').value.trim();
-  const desc  = document.getElementById('productDesc').value.trim();
-
-  if (!title || !price || !image) {
-    alert('لطفاً نام، قیمت و عکس محصول را وارد کنید');
-    return;
-  }
 
   const product = { title, price, image, desc };
 
